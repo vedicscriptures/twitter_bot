@@ -16,8 +16,9 @@ api = tweepy.API(auth)
 # Tweet Posting
 try:
     api.verify_credentials()
-    print("Authentication OK")
+    print("Authentication OK\n")
     api.update_status(Post)
-    print("Posted")
+    print(post)
+    print("\nPosted")
 except Exception as error:
     print(f"Error during authentication :\n{error}")
