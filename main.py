@@ -18,7 +18,7 @@ try:
     api.verify_credentials()
     print("Authentication OK\n")
     api.update_status(Post)
-    print(post)
+    print(Post)
     print("\nPosted")
 except Exception as error:
     print(f"Error during authentication :\n{error}")
