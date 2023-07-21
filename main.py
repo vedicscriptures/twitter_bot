@@ -9,6 +9,7 @@ def main():
 
     # Tweet Text limit
     Post = (Slok[:277] + "..") if len(Slok) > 280 else Slok
+    print(Post)
 
     # Authenticate to Twitter
     api_key = os.environ["APIKey"]
@@ -22,13 +23,10 @@ def main():
     )
 
     # Tweet Posting
-    try:
-        status = client.create_tweet(text=Post, user_auth=True)
-        print(Post)
-        print(status)
-        print("Posted")
-    except Exception as error:
-        print(f"Error during authentication :\n{error}")
+    status = client.create_tweet(text=Post, user_auth=True)
+
+    print(status)
+    print("Posted")
 
 
 if __name__ == "__main__":
