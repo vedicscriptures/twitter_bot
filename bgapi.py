@@ -64,5 +64,6 @@ def Slokm():
         print("Error during Bgapi")
 
 
-# testing
-# print(Slokm())
+if __name__ == "__main__":
+    # testing
+    print(Slokm())
