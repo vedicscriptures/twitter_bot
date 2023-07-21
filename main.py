@@ -2,30 +2,34 @@ import tweepy
 from bgapi import *
 import os
 
-# Getting sloks from Bhagavad Gita API
-Slok = Slokm()
 
-# Tweet Text limit
-Post = (Slok[:277] + "..") if len(Slok) > 280 else Slok
+def main():
+    # Getting sloks from Bhagavad Gita API
+    Slok = Slokm()
 
-# Authenticate to Twitter
-consumer_key = os.environ["APIKey"]
-consumer_secret = os.environ["APISecretKey"]
-access_token = os.environ["AccessToken"]
-access_token_secret = os.environ["AccessTokenSecret"]
+    # Tweet Text limit
+    Post = (Slok[:277] + "..") if len(Slok) > 280 else Slok
 
-client = tweepy.Client(
-    consumer_key=consumer_key,
-    consumer_secret=consumer_secret,
-    access_token=access_token,
-    access_token_secret=access_token_secret,
-)
+    # Authenticate to Twitter
+    api_key = os.environ["APIKey"]
+    api_secret = os.environ["APISecretKey"]
+    access_token = os.environ["AccessToken"]
+    access_token_secret = os.environ["AccessTokenSecret"]
+    bearer_token = os.environ["BearerToken"]
 
-# Tweet Posting
-try:
-    status = client.create_tweet(text=Post)
-    print(Post)
-    print(status)
-    print("\nPosted")
-except Exception as error:
-    print(f"Error during authentication :\n{error}")
+    client = tweepy.Client(
+        bearer_token, api_key, api_secret, access_token, access_token_secret
+    )
+
+    # Tweet Posting
+    try:
+        status = client.create_tweet(text=Post, user_auth=True)
+        print(Post)
+        print(status)
+        print("Posted")
+    except Exception as error:
+        print(f"Error during authentication :\n{error}")
+
+
+if __name__ == "__main__":
+    main()
