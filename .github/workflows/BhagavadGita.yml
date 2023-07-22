@@ -28,3 +28,4 @@ jobs:
         APISecretKey: ${{ secrets.APISecretKey }}
         AccessToken: ${{ secrets.AccessToken }}
         AccessTokenSecret: ${{ secrets.AccessTokenSecret }}
+        BearerToken: ${{ secrets.BearerToken }}
