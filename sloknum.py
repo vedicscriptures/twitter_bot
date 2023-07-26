@@ -1,7 +1,7 @@
 from datetime import date
 
 # Generat Bhagavad Gita Chapter and Slok number based on current date
-startdate = "2021,10,12"
+startdate = "2021,10,13"
 
 
 def Slok_Num():
