@@ -1,6 +1,8 @@
 import tweepy
 from bgapi import *
 import os
+
+"""
 import base64
 import requests
 
@@ -23,7 +25,38 @@ def generate_bearer_token(api_key, api_secret):
     bearer_token = response.json().get("access_token")
 
     return bearer_token
+import requests
 
+def post_tweet(tweet_text, bearer_token):
+    tweet_endpoint = "https://api.twitter.com/2/tweets"
+    headers = {
+        "Authorization": f"Bearer {bearer_token}",
+        "Content-Type": "application/json"
+    }
+    data = {
+        "text": tweet_text
+    }
+    
+    try:
+        response = requests.post(tweet_endpoint, headers=headers, json=data)
+        response.raise_for_status()
+        tweet = response.json()
+        return tweet
+    except requests.exceptions.HTTPError as e:
+        print(f"Error posting tweet: {e}")
+        return None
+
+if __name__ == "__main__":
+    # Replace 'YOUR_BEARER_TOKEN' with your actual Bearer Token
+    bearer_token = 'YOUR_BEARER_TOKEN'
+    tweet_text = "Hello, this is my tweet using Twitter API v2 and Python!"
+
+    tweet = post_tweet(tweet_text, bearer_token)
+    if tweet:
+        print("Tweet successfully posted!")
+    else:
+        print("Failed to post tweet.")
+"""        
 def main():
     # Getting sloks from Bhagavad Gita API
     Slok = Slokm()
