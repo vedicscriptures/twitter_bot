@@ -1,6 +1,8 @@
 import tweepy
 from bgapi import *
 import os
+import base64
+import requests
 
 def generate_bearer_token(api_key, api_secret):
     # URL for Twitter API endpoint to obtain the bearer token
