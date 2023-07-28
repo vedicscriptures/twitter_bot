@@ -37,8 +37,8 @@ def main():
     api_secret = os.environ["APISecretKey"]
     access_token = os.environ["AccessToken"]
     access_token_secret = os.environ["AccessTokenSecret"]
-    # bearer_token = os.environ["BearerToken"]
-    bearer_token = generate_bearer_token(api_key, api_secret)
+    bearer_token = os.environ["BearerToken"]
+    # bearer_token = generate_bearer_token(api_key, api_secret)
 
     client = tweepy.Client(
         bearer_token, api_key, api_secret, access_token, access_token_secret
