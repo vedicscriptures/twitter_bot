@@ -56,7 +56,9 @@ if __name__ == "__main__":
         print("Tweet successfully posted!")
     else:
         print("Failed to post tweet.")
-"""        
+"""
+
+
 def main():
     # Getting sloks from Bhagavad Gita API
     Slok = Slokm()
@@ -74,7 +76,10 @@ def main():
     # bearer_token = generate_bearer_token(api_key, api_secret)
 
     client = tweepy.Client(
-        bearer_token, api_key, api_secret, access_token, access_token_secret
+        consumer_key=api_key,
+        consumer_secret=api_secret,
+        access_token=access_token,
+        access_token_secret=access_token_secret,
     )
 
     # Tweet Posting
