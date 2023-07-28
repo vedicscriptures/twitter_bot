@@ -2,13 +2,13 @@ import tweepy
 from bgapi import *
 import os
 
-def generate_bearer_token(api_key, api_secret_key):
+def generate_bearer_token(api_key, api_secret):
     # URL for Twitter API endpoint to obtain the bearer token
     url = "https://api.twitter.com/oauth2/token"
 
     # Set up the HTTP Basic Authentication header with API key and API secret key
     auth_headers = {
-        "Authorization": f"Basic {base64.b64encode(f'{api_key}:{api_secret_key}'.encode()).decode()}"
+        "Authorization": f"Basic {base64.b64encode(f'{api_key}:{api_secret}'.encode()).decode()}"
     }
 
     # Parameters for the POST request to obtain the bearer token
@@ -36,7 +36,7 @@ def main():
     access_token = os.environ["AccessToken"]
     access_token_secret = os.environ["AccessTokenSecret"]
     # bearer_token = os.environ["BearerToken"]
-    bearer_token = generate_bearer_token(api_key, api_secret_key)
+    bearer_token = generate_bearer_token(api_key, api_secret)
 
     client = tweepy.Client(
         bearer_token, api_key, api_secret, access_token, access_token_secret
