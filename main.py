@@ -85,8 +85,8 @@ def main():
     auth.set_access_token(access_token, access_token_secret)
     client = tweepy.API(auth)
     # Tweet Posting
-    status = client.create_tweet(text=Post, user_auth=True)
-
+    # status = client.create_tweet(text=Post, user_auth=True)
+     status = client.update_status(post)
     print(status)
     print("Posted")
 
