@@ -75,13 +75,15 @@ def main():
     bearer_token = os.environ["BearerToken"]
     # bearer_token = generate_bearer_token(api_key, api_secret)
 
-    client = tweepy.Client(
-        consumer_key=api_key,
-        consumer_secret=api_secret,
-        access_token=access_token,
-        access_token_secret=access_token_secret,
-    )
-
+    # client = tweepy.Client(
+     #   consumer_key=api_key,
+  #      consumer_secret=api_secret,
+  #      access_token=access_token,
+ #       access_token_secret=access_token_secret,
+ #   )
+    auth = tweepy.OAuthHandler(api_key,api_secret)
+    auth.set_access_token(access_token, access_token_secret)
+    client = tweepy.API(auth)
     # Tweet Posting
     status = client.create_tweet(text=Post, user_auth=True)
 
