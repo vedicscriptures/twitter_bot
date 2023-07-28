@@ -86,7 +86,7 @@ def main():
     client = tweepy.API(auth)
     # Tweet Posting
     # status = client.create_tweet(text=Post, user_auth=True)
-     status = client.update_status(post)
+    status = client.update_status(post)
     print(status)
     print("Posted")
 
