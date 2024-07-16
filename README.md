@@ -29,7 +29,7 @@ Twitter Bot with BhagavadGitaApi to post daily Bhagavad Gita Slok
 ## 💻 Developed with (Sources and Credits)
 
 - Powered by:
-	- [BhagavadGitaApi](https://docs.bhagavadgitaapi.in/)
+	- [BhagavadGitaApi](https://vedicscriptures.github.io/)
 	- [Twitter Api](https://developer.twitter.com/en/docs)
 	- [Github Action](https://github.com/features/actions)
 - Code:

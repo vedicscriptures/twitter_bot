@@ -42,7 +42,7 @@ def Teg():
 # Returning specific slok or translation based on time
 def Slokm():
     try:
-        response = requests.get(f"https://bhagavadgitaapi.in/slok/{ch}/{sl}")
+        response = requests.get(f"https://vedicscriptures.github.io/slok/{ch}/{sl}")
         data = response.json()
         if now.hour in range(0, 4):
             return data["slok"] + Teg()
